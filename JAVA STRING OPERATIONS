@@ -1,0 +1,122 @@
+1. Write a program to check if two given strings are anagrams of each other.
+Input format :
+The first line contains the String S1.
+The second line contains the shuffled String S2.
+
+Output format :
+Output "Anagrams" if S1 and S2 are anagrams of each other, otherwise output "Not Anagrams".
+
+
+// You are using Java
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+        
+        char[] arr1;
+        char[] arr2;
+        
+        if(s1.length() != s2.length()){
+            System.out.println("Not Anagrams");
+        }
+        else{
+            arr1 = s1.toCharArray();
+            arr2 = s2.toCharArray();
+            
+            Arrays.sort(arr1);
+            Arrays.sort(arr2);
+            
+            
+            if(Arrays.equals(arr1,arr2)){
+                System.out.println("Anagrams");
+            }
+            else{
+                System.out.println("Not Anagrams");
+            }
+        }
+        
+    }
+}
+
+
+--------------------           x         ------------------------------            x               -----------------------------
+
+
+2. Write a program to convert alternate characters in a string to uppercase and lowercase.
+Input format :
+The input consists of a string.
+
+Output format :
+Output the input string with alternate characters converted to uppercase and lowercase.
+
+// You are using Java
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        String data = sc.nextLine();
+        
+        StringBuffer res = new StringBuffer();
+        boolean upper = false;
+        
+        for(int i=0; i<data.length(); i++){
+            char ch = data.charAt(i);
+            
+            if(Character.isLetter(ch)){
+                if(upper){
+                    res.append(Character.toUpperCase(ch));
+                }
+                else{
+                    res.append(Character.toLowerCase(ch));
+                }
+                upper = !upper;
+            }
+            
+            else{
+                res.append(ch);
+            }
+        }
+        System.out.println(res);
+    }
+}
+
+--------------------           x         ------------------------------            x               -----------------------------
+
+3. Write a program to reverse the words in a sentence.
+
+Input format :
+The input consists of a sentence.
+
+Output format :
+Output the input sentence with the words reversed
+
+
+// You are using Java
+
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        String sentance = sc.nextLine();
+        
+        String[] words = sentance.split(" ");
+        
+        
+        for(int i=words.length-1;i>=0;i--){
+            System.out.print(words[i]);
+            
+            if(i !=0){
+                System.out.print(" ");
+            }
+        }
+    }
+}
