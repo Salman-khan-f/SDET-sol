@@ -1,0 +1,143 @@
+1. Write a program to sort an array of integers in ascending order using the bubble sort algorithm.
+Input format :
+The first line contains size of the array.
+The second line contains the elements of the array.
+
+// You are using Java
+import java.util.Scanner;
+public class Main{
+    
+    public static void bubblesort(int[] arr){
+        int n = arr.length;
+        for(int j=0; j<arr.length; j++){
+            for(int k=0; k<n-1; k++){
+                int temp = 0;
+                
+                if(arr[k] > arr[k+1]){
+                    temp = arr[k];
+                    
+                    arr[k] = arr[k+1];
+                    
+                    arr[k+1] = temp;
+                }
+            }
+          
+            
+        }
+        
+        
+        
+        for(int a:arr){
+              System.out.print(a+" ");
+          }
+        
+    }
+    
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        int size = sc.nextInt();
+        
+        int[] arr = new int[size];
+        
+        for(int i=0; i<size; i++){
+            arr[i] = sc.nextInt();
+        }
+        bubblesort(arr);
+        
+        
+        
+    }
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2. Write a program to sort an array of strings in alphabetical order using the bubble sort algorithm.
+Input format :
+The first line set the size of the Array.
+The second line is followed by Strings.
+
+
+// You are using Java
+
+import java.util.Scanner;
+
+public class Main{
+    
+    public static void bubblesort(String[] arr,int n){
+        
+        for(int i=0; i<n ;i++){
+            for(int j=0; j<n-i-1;j++){
+                
+                if(arr[j].compareTo(arr[j+1])>0){
+                    String temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+            
+        }
+            for(String a:arr){
+                System.out.println(a);
+            }
+    }
+    
+    
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        int size = sc.nextInt();
+        sc.nextLine();
+        
+        String[] data = new String[size];
+        
+        for(int i=0; i<size; i++){
+            data[i] = sc.next();
+        }
+        
+        bubblesort(data,size);
+        
+        
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+3. Write a program to search for a specific character in a string using the linear search algorithm.
+Input format :
+The first line contains a string s.
+The second line contains a character c which needs to be searched for in the string.
+
+
+// You are using Java
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+
+        String s = sc.nextLine();
+        
+        char c = sc.next().charAt(0);
+        
+        boolean found = false;
+        
+        for(int i=0; i < s.length();i++){
+            if(s.charAt(i) == c){
+                System.out.println("Found at index "+i);
+                found = true;
+                break;
+            }
+        }
+        
+        if(!found){
+            System.out.println("Not found");
+        }
+    }
+}
+
+
