@@ -1,0 +1,32 @@
+
+*** SDET JAVA ARRAYS AND METHODS CODS_NEW ***
+1. // You are using Java
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        
+        Scanner sc = new Scanner(System.in);
+        
+        int size = sc.nextInt();
+        
+        int[] arr = new int[size];
+        
+        // for(int i=0;i<size;i++){
+        //     arr[i]=sc.nextInt();
+        // }
+        int i=0;
+        while(sc.hasNextInt()){
+            
+            arr[i]=sc.nextInt();
+            i++;
+        }
+        
+        int sum=0;
+        for(int a:arr){
+            sum += a;
+        }
+            System.out.println("The sum of the array elements is: "+sum);
+        
+    }
+}
