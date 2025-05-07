@@ -30,3 +30,66 @@ public class Main{
         
     }
 }
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+2. // You are using Java
+
+import java.util.Scanner;
+
+public class Main{
+    
+    public static int[] concatenateArrays(int[] arr1, int[] arr2){
+        int[] res = new int[arr1.length + arr2.length];
+        int index = 0;
+        
+        for(int num :arr1){
+            res[index] = num;
+            index++;
+        }
+        
+        for(int num : arr2){
+            res[index] = num;
+            index++;
+        }
+        
+        
+        return res;
+    }
+    
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        int size1 = sc.nextInt();
+        int[] arr1 = new int[size1];
+        
+        for(int i=0; i<size1; i++ ){
+            arr1[i] = sc.nextInt();
+        }
+        
+        
+    
+        int size2 = sc.nextInt();
+        int[] arr2 = new int[size2];
+        
+        for(int j=0; j<size2; j++ ){
+            arr2[j] = sc.nextInt();
+        }
+        
+        
+        int[] finalres = concatenateArrays(arr1, arr2);
+        
+        for(int op:finalres){
+            System.out.print(op);
+        }
+    }
+}
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
